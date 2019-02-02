@@ -1,0 +1,3 @@
+The only pass where my contract calls an external contract (the withdraw function),  I made sure to deduct the funds being withdrawn from state before calling transfer.  This way the user is unable to perform a reentrancy attack.
+
+In addition, I only ever reference a store's balance instead of the contracts, in order to prevent unintended behavior from occuring on a "Forcibly Sending Ether to a contract attack".

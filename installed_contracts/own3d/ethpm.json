@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "Frank Gasser <frank.gasser@gmail.com>"
+  ],
+  "license": "MIT",
+  "description": "An simple package that exposes only inheritable base contracts: mortal, owned, transferable",
+  "keywords": [
+    "ethereum",
+    "owned",
+    "isOwned",
+    "transferable"
+  ],
+  "links": {},
+  "sources": [
+    "./contracts/mortal.sol",
+    "./contracts/owned.sol",
+    "./contracts/transferable.sol"
+  ],
+  "dependencies": {},
+  "manifest_version": 1,
+  "package_name": "own3d",
+  "version": "1.0.0"
+}

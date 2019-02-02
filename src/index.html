@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Ethereum Storefront Project</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <br />
+    <div class="container">
+        <ul class="nav nav-pills nav-justified">
+            <li class="hidden" id="nav-owner"><a data-toggle="tab" href="#owner-tab">Owner Abilities </a></li>
+            <li class="hidden" id="nav-admin"><a data-toggle="tab" href="#administration-tab">Administration</a></li>
+            <li class="hidden" id="nav-storeManager" ><a data-toggle="tab" href="#storeManager-tab">Store Owner</a></li>
+            <li class="" id="nav-shopper"><a data-toggle="tab" href="#shopper-tab">Shopper</a></li>
+          </ul>
+      
+      </div>
+      <br />
+      <br />
+      <div class="tab-content">
+        <div id="owner-tab" class="tab-pane fade col-sm-6 col-sm-offset-3 row-sm-offset-2 in active">
+              <div class="panel panel-primary">
+                  <div class="panel-heading">Contract Owner Functionality</div>
+                  <div class="panel-body">
+                      <div class="form-group">
+                          <label for="addNewAdminAddress">Update Admin Contract Addresses</label>
+                          <input type="text" class="form-control" id="adminUpdate" placeholder="Enter contract address to add or remove">
+                        </div>
+                      <button type="submit" class="btn btn-primary btn-add-admin">Add Address </button>
+                      <button type="submit" class="btn btn-primary btn-remove-admin">Remove Address </button>
+                      <br />
+                      <hr />
+                      <div id="alertAdminSucces" class="alert alert-success alert-dismissible hidden">
+                        <strong>Success!</strong> <div id="alertAdminSuccessMessage"></div>
+                      </div>
+                      <div id="alertAdminFailure" class="alert alert-danger alert-dismissible hidden">
+                        <strong>Failure!</strong> <div id="alertAdminFailureMessage"></div>
+                      </div>
+                  </div>
+                </div>
+        </div>
+
+        <div id="administration-tab" class="tab-pane fade col-sm-6 col-sm-offset-3 row-sm-offset-2 ">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Administrators Functionality</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="updateStoreOwners">Update Store Owner Contract Addresses</label>
+                        <input type="text" class="form-control" id="storeOwnerUpdate" placeholder="Enter contract address to add or remove">
+                      </div>
+                    <button type="submit" class="btn btn-primary btn-add-storeOwner">Add Address </button>
+                    <button type="submit" class="btn btn-primary btn-remove-storeOwner">Remove Address </button>
+                    <br />
+                    <hr />
+                    <div id="alertStoreOwnerSucces" class="alert alert-success alert-dismissible hidden">
+                      <strong>Success!</strong> <div id="alertStoreOwnerSuccessMessage"></div>
+                    </div>
+                    <div id="alertStoreOwnerFailure" class="alert alert-danger alert-dismissible hidden">
+                      <strong>Failure!</strong> <div id="alertStoreOwnerFailureMessage"></div>
+                    </div>
+                    <br />
+                </div>
+              </div>
+        </div>
+
+        <div id="storeManager-tab" class="tab-pane fade col-sm-10 col-sm-offset-1">
+          <div class="panel panel-primary">
+            <div class="panel-heading">Store Manager Functionality</div>
+            <div class="panel-body">
+                <label for="createStore">Create New Store</label>
+                <br />
+                <button type="submit" class="btn btn-primary btn-createStore">Create Store </button>
+                <br />
+                <div id="alertCreateStoreSucces" class="alert alert-success alert-dismissible hidden">
+                  <strong>Success!</strong> <div id="alertCreateStoreSuccessMessage"></div>
+                </div>
+                <div id="alertCreateStoreFailure" class="alert alert-danger alert-dismissible hidden">
+                  <strong>Failure!</strong> <div id="alertCreateStoreFailureMessage"></div>
+                </div>
+                <hr />
+                <br />
+                <div class="form-group col-sm-6 col-md-6 col-lg-6">
+                  <label>Update or create new products</label>
+                  <br />
+                  <label for="updateStoreId">StoreId</label>
+                  <input type="number" class="form-control col-sm-6 col-md-6 col-lg-4" id="updateStoreId" placeholder="Enter the storeId you wish to create a modify the products of">
+                  <br />
+
+                  <label for="updateProductId">ProductId (only used for editting existing products)</label>
+                  <input type="number" class="form-control col-sm-6 col-md-6 col-lg-4" id="updateProductId" placeholder="Enter the productId to edit.  Leave blank if creating a new product">
+                  <br />
+                  <label for="updateProductPrice">Price </label>
+                  <input type="number" class="form-control col-sm-6 col-md-6 col-lg-4" id="updateProductPrice" placeholder="Enter a new price for the product">
+                  <br />
+                  <label for="updateProductQuantity">Quantity</label>
+                  <input type="number" class="form-control col-sm-6 col-md-6 col-lg-4" id="updateProductQuantity" placeholder="Enter a new quantity for the product">
+                  <br />
+                  <br />
+                  <button type="submit" class="btn btn-primary btn-updateProduct">Update Product</button>
+                  <button type="submit" class="btn btn-primary btn-createProduct">Create New Product</button>
+                </div>
+                <div class="form-group col-sm-6 col-md-6 col-lg-6">
+                    <label>Withdraw Funds</label>
+                    <br />
+                    <label for="withdrawStoreId">StoreId</label>
+                    <input type="number" class="form-control col-sm-6 col-md-6 col-lg-4" id="withdrawStoreId" placeholder="Enter the storeId you wish to withdraw the funds of">
+                    <br />
+                    <button type="submit" class="btn btn-primary btn-withdraw"> Withdraw</button>
+                  </div>
+            </div>
+            <hr />
+            <br />
+              
+            <div id="storesByOwnerTemplate" class="row">
+            </div>
+            </div>
+          </div>
+        
+
+        <div id="shopper-tab" class="tab-pane fade col-sm-10 col-sm-offset-1">
+          <div class="panel panel-primary">
+            <div class="panel-heading">Shopper Functionality</div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label>Buy products</label>
+                    <br />
+                    <label for="buyStoreId">StoreId</label>
+                    <input type="number" class="form-control col-sm-6 col-md-6 col-lg-4" id="buyStoreId" placeholder="Enter the storeId you wish to buy a product from">
+                    <br />
+  
+                    <label for="buyProductId">ProductId</label>
+                    <input type="number" class="form-control col-sm-6 col-md-6 col-lg-4" id="buyProductId" placeholder="Enter the productId to you wish to buy">
+                    <br />
+                
+                  </div>
+                  <br />
+                  <button type="submit" class="btn btn-primary btn-buyProduct">Buy Product</button>
+
+                  <br />
+                  <hr />
+
+                <div id="allStores" class="row">
+                </div>
+                <br />
+                <hr />
+                <br />
+                <div id="customersReceipts" class="row">
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    
+    <div id="storeTemplate" style="display: none;">
+        <div class="col-sm-10 col-md-8 col-lg-6">
+          <div class="panel panel-default panel-pet">
+            <div class="panel-heading">
+              <h3 class="panel-title">Temp Store Titlte</h3>
+            </div>
+            <div class="panel-body">
+              <strong>StoreId</strong>: <span class="store-id"></span><br/>
+              <strong>Open</strong>: <span class="store-open"></span><br/>
+              <strong>Balance</strong>: <span class="store-balance"></span><br/>
+              <strong>Number of Products</strong>:<span class="store-productCount"></span><br/>
+              <hr />
+              <div id="storeOwnerOptions" class="row">
+              <div id="productPurchaseOptions" class="row">
+              </div>
+              </div>
+        </div>
+      </div>
+        </div>
+    </div>
+
+    <div id="receiptTemplate" style="display: none;">
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="panel panel-default panel-pet">
+          <div class="panel-heading">
+            <h3 class="panel-title">Receipt Temp Title</h3>
+          </div>
+          <div class="panel-body">
+            <strong>StoreId</strong>: <span class="receipt-store"></span><br/>
+            <strong>ProductId</strong>: <span class="receipt-product"></span><br/>
+            <strong>Purchase Price</strong>:<span class="receipt-price"></span><br/>
+            <strong>Block Number</strong>:<span class="receipt-blockNumber"></span><br/>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="productTemplate" style="display: none;">
+        <div class="panel-heading">
+            <h3 class="panel-title">Product Title</h3>
+          </div>
+          <div class="panel-body">
+            <strong>ProductId</strong>: <span class="product-id"></span><br/>
+            <strong>Price</strong>: <span class="product-price"></span><br/>
+            <strong>Quantity</strong>: <span class="product-quantity"></span><br/>
+          </div>
+    </div>
+    
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
